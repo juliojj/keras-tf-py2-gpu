@@ -4,11 +4,10 @@ FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
 
 # fix cudnn version
 USER root
-RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommend$
-libcudnn7=7.0.5.15-1+cuda9.1 \
-libcudnn7-dev=7.0.5.15-1+cuda9.1 && \
-rm -rf /var/lib/apt/lists/*
-RUN apt-get update
+ENV CUDNN_VERSION 7.0.5.15
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libcudnn7=$CUDNN_VERSION-1+cuda9.0 && \     
+ rm -rf /var/lib/apt/lists/*
 
 # install packages
 RUN apt-get update -qq \
