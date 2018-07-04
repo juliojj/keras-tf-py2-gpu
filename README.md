@@ -1,5 +1,5 @@
 # keras-tf-py2-gpu
-docker image build on top of nvidia/cuda
+docker image built on top of nvidia/cuda
 
 Ubuntu 16.04
 Keras=2.1.4
