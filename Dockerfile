@@ -1,4 +1,5 @@
-# Keras, TensorFlow, Python2, cuda and cuDNN (GPU) and some extra packages (opencv, scipy, sklearn, etc)
+# Keras, TensorFlow, Python2, cuda and cuDNN (GPU) 
+# and some extra packages (opencv, scipy, sklearn, etc)
 
 FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
 
@@ -44,12 +45,12 @@ RUN pip install --upgrade pip
 # manually update numpy
 RUN pip --no-cache-dir install -U numpy==1.13.3
 
-ARG TENSORFLOW_VERSION=1.5.0
+ARG TENSORFLOW_VERSION=1.8.0
 ARG TENSORFLOW_DEVICE=gpu
 ARG TENSORFLOW_APPEND=_gpu
 RUN pip --no-cache-dir install https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_DEVICE}/tensorflow${TENSORFLOW_APPEND}-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
 
-ARG KERAS_VERSION=2.1.4
+ARG KERAS_VERSION=2.2.0
 ENV KERAS_BACKEND=tensorflow
 RUN pip --no-cache-dir install --no-dependencies git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
 
