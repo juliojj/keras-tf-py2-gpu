@@ -53,6 +53,7 @@ RUN pip --no-cache-dir install https://storage.googleapis.com/tensorflow/linux/$
 ARG KERAS_VERSION=2.2.0
 ENV KERAS_BACKEND=tensorflow
 RUN pip --no-cache-dir install --no-dependencies git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
+RUN pip install keras_applications
 
 # install opencv
 RUN pip install opencv-python
