@@ -43,7 +43,7 @@ RUN apt-get update -qq \
 RUN pip install --upgrade pip
 
 # manually update numpy
-RUN pip --no-cache-dir install -U numpy==1.13.3
+RUN pip --no-cache-dir install -U numpy==1.14.5
 
 ARG TENSORFLOW_VERSION=1.8.0
 ARG TENSORFLOW_DEVICE=gpu
