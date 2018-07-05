@@ -50,10 +50,9 @@ ARG TENSORFLOW_DEVICE=gpu
 ARG TENSORFLOW_APPEND=_gpu
 RUN pip --no-cache-dir install https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_DEVICE}/tensorflow${TENSORFLOW_APPEND}-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
 
-ARG KERAS_VERSION=2.2.0
+ARG KERAS_VERSION=2.1.6
 ENV KERAS_BACKEND=tensorflow
 RUN pip --no-cache-dir install --no-dependencies git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
-RUN pip install keras_applications
 
 # install opencv
 RUN pip install opencv-python
