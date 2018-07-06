@@ -34,6 +34,7 @@ RUN apt-get update -qq \
     # extra packages
     vim \
     python-sklearn \
+    python-tk \
     ffmpeg \
     frei0r-plugins \
  && apt-get clean \
@@ -59,5 +60,8 @@ RUN pip install opencv-python
 
 # debug
 RUN pip install pudb
+
+# matplotlib
+RUN pip install matplotlib
 
 WORKDIR /root/
